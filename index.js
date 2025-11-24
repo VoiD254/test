@@ -1,6 +1,25 @@
-const a = 16;
-const mmk = "mmk was here";
+const a = 16
+let mmk = "mmk was here"
 
+// accidental global variable + typo
+mmkk = "this should not exist"
 
-console.log(mmk);
-console.log(a + 1);
+// logic error: adding string to number
+console.log(a + "1")
+
+// wrong variable name (ReferenceError)
+console.log(mmkz)
+
+// bad comparison (assignment instead of comparison)
+if (a = 10) {
+    console.log("a is ten?")
+}
+
+// unreachable code after return inside block
+function test() {
+    return "done"
+    console.log("this will never run")
+}
+
+// insecure eval usage
+eval("console.log('eval is dangerous')")
